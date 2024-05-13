@@ -1,0 +1,121 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  transition: 0.3s;
+  background: var(--Primary-Default);
+}
+.wrapperBg {
+  background: var(--Primary-Default);
+  border: 1px solid var(255, 255, 255, 0.3);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 48px;
+}
+.logoContainer {
+  /* min-width: 123.63px; */
+}
+.logo {
+}
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-right: auto;
+  width: 100%;
+}
+.navItem {
+  position: relative;
+  color: var(--Base-0);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  color: var(--Base-0);
+  cursor: pointer;
+  opacity: 0.5;
+}
+.activeArrow {
+  opacity: 1;
+}
+
+.icon {
+  display: none;
+}
+.button {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1199px) {
+  .navItems {
+    flex-direction: column;
+    gap: 0;
+    background: var(--Primary-Default);
+    transform: translateX(250%);
+    transition: 0.3s;
+    position: fixed;
+    top: 80px;
+    right: 0;
+
+    max-width: 320px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 0 15px;
+    padding-bottom: 24px;
+  }
+
+  .sidebar {
+    transform: translateX(0);
+    right: 0;
+  }
+  .navItem {
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 28px 0;
+    font-size: 20px;
+  }
+  .iconContainer {
+    padding: 10px;
+    background: var(--Base-0);
+    border-radius: 8px;
+    border: 1px solid var(--Base-950, #09090f);
+    background: var(--Base-0, #fff);
+    box-shadow: 4px 4px 0px 0px rgba(9, 9, 15, 0.2);
+    cursor: pointer;
+  }
+  .icon {
+    display: block;
+    font-size: 20px;
+  }
+  .button {
+    margin-top: auto;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .navItems {
+    max-width: 100%;
+    padding: 0px 24px;
+    padding-bottom: 24px;
+  }
+}

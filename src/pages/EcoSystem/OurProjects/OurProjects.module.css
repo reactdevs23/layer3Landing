@@ -1,0 +1,150 @@
+.wrapper {
+  padding: 0;
+  padding-bottom: 50px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputContainer {
+  display: flex;
+  max-width: 588px;
+  width: 100%;
+  padding: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: var(--Base-0);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03);
+  margin: 0 auto;
+}
+.searchIcon {
+  font-size: 22px;
+  cursor: pointer;
+}
+.input {
+  color: var(--Base-600);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155.556%;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab {
+  display: flex;
+  padding: 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Base-200);
+  background: var(--Base-0);
+  cursor: pointer;
+}
+.activeTab {
+  background: var(--Primary-Default);
+  color: var(--Base-0);
+}
+.allProjects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--Base-0);
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.04);
+}
+.projectImg {
+  max-width: 64px;
+}
+.line {
+  width: 40px;
+  height: 1px;
+  background: var(--Base-200);
+}
+.titleAndLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.link {
+  color: var(--Primary-Default);
+  text-decoration: underline;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155.556%;
+  text-decoration-line: underline;
+}
+.button {
+  display: flex;
+  padding: 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Base-950);
+  background: var(--Base-0);
+}
+.seeMoreButton {
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1199px) {
+  .allProjects {
+    gap: 20px;
+  }
+  .project {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .allProjects {
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .project {
+    padding: 20px 16px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .allProjects {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .input {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,141 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 126px;
+}
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 384px;
+  width: 100%;
+  position: relative;
+}
+
+.heading {
+}
+.light {
+  background: linear-gradient(
+    114deg,
+    #ffb415 0%,
+    #3d41ff 22.24%,
+    #e2556e 34.21%,
+    #4447ff 59.87%,
+    #f0516e 85.53%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+}
+.name {
+  font-weight: 700;
+  color: var(--Base-950);
+  background-clip: none;
+}
+.whyUsImg {
+  max-width: 280px;
+  width: 100%;
+}
+.facilities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.facility {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 48px;
+  border-radius: 32px;
+  background: var(--Base-0, #fff);
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+}
+
+.img {
+  max-width: 80px;
+  min-width: 70px;
+  width: 100%;
+}
+.arrowImg {
+  display: none;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media only screen and (max-width: 1199px) {
+  .container {
+    gap: 70px;
+  }
+
+  .facility {
+    gap: 32px;
+    padding: 28px;
+  }
+  .infoContainer {
+    gap: 20px;
+  }
+  .leftSide {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .leftSide {
+    max-width: auto;
+  }
+  .facility {
+    flex-direction: column;
+    gap: 15px;
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .whyUsImg {
+    max-width: 200px;
+  }
+  .heading {
+    max-width: 384px;
+  }
+  .leftSide {
+    width: 100%;
+    max-width: 100%;
+    gap: 30px;
+  }
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .arrowImg {
+    display: block;
+
+    transform: translate(0, 0) rotate(120deg);
+
+    max-width: 120px;
+    margin: 0 auto;
+    margin-top: auto;
+  }
+  .facility {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .arrowImg {
+    margin-left: auto;
+  }
+  .whyUsImg {
+    max-width: 163px;
+  }
+}

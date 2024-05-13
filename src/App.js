@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home/Home";
+
+import clsx from "clsx";
+import Header from "./components/Header/Header";
+import StartBuilding from "./pages/StartBuilding/StartBuilding";
+import EcoSystem from "./pages/EcoSystem/EcoSystem";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={clsx("mainPage")}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ecosystem" element={<EcoSystem />} />
+        <Route path="/start-building" element={<StartBuilding />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

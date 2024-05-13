@@ -1,0 +1,227 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  gap: 70px;
+  z-index: 1;
+}
+.headingContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+  max-width: 696px;
+  width: 100%;
+}
+
+.sideImg {
+  max-width: 64px;
+  min-width: 40px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.light {
+  font-weight: 300;
+}
+.infoContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+.headingAndTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  background: linear-gradient(90deg, #1efcf7 0%, #434aff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.noOfSuccesfullProject {
+  border-radius: 16px;
+  border: 4px solid var(--Base-0);
+  background: linear-gradient(240deg, #b3a5e5 0%, var(--Yellow) 100%);
+  box-shadow: 16px 24px 32px -8px rgba(0, 0, 0, 0.28);
+  position: relative;
+
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+.noOfSuccesfullProject::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 40px;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  background: linear-gradient(240deg, #fdf5b1 0%, #b3a5e5 48.5%, #e3a670 100%);
+  z-index: -1;
+  transform: rotate(15deg);
+}
+
+.text {
+  max-width: 119px;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.projectWrapper {
+  padding: 0 10px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--Base-0);
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.04);
+}
+.projectImg {
+  max-width: 64px;
+}
+.line {
+  width: 40px;
+  height: 1px;
+  background: var(--Base-200);
+}
+.titleAndLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.link {
+  color: var(--Primary-Default);
+  text-decoration: underline;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155.556%;
+  text-decoration-line: underline;
+}
+.button {
+  display: flex;
+  padding: 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Base-950);
+  background: var(--Base-0);
+}
+.nextButton,
+.previousButton {
+  padding: 10px 10px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  transform: translateY(calc(100% + 30px));
+  position: absolute;
+  bottom: 0px;
+
+  z-index: 500;
+}
+.previousButton {
+  left: 60px;
+}
+.previousButton:hover,
+.nextButton:hover {
+  transform: translateY(calc(100% + 30px));
+}
+.nextButton {
+  left: 0px;
+  right: auto;
+}
+.arrow {
+  color: var(--Base-400);
+  font-size: 30px;
+}
+.activeButton .arrow {
+  color: var(--Base-950);
+}
+.exploreButton {
+  border-radius: 10px;
+
+  border: 1px solid var(--Base-950, #09090f);
+  background: var(--Base-50, #f6f7f9);
+  color: var(--Base-950);
+  margin-top: 30px;
+  margin-left: auto;
+}
+@media only screen and (max-width: 991px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .headingContainer {
+    align-items: flex-start;
+    margin-right: auto;
+  }
+
+  .infoContainer {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .projectWrapper {
+    padding: 0 6px;
+  }
+  .project {
+    padding: 20px 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .headingContainer {
+    gap: 18px;
+  }
+  .sideImg {
+    max-width: 48px;
+    min-width: 40px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .previousButton,
+  .nextButton {
+    left: 50%;
+    transform: translate(-50%, calc(100% + 30px));
+  }
+  .previousButton {
+    transform: translate(calc(-50% + 15px), calc(100% + 30px));
+  }
+  .nextButton {
+    transform: translate(calc(-50% - 40px), calc(100% + 30px));
+  }
+  .arrow {
+    font-size: 24px;
+  }
+  .exploreButton {
+    margin: 0 auto;
+    margin-top: 90px;
+  }
+}

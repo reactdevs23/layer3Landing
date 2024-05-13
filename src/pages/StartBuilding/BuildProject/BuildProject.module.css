@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.heading {
+  background: linear-gradient(
+    114deg,
+    #fae2af 0%,
+    #adafff 22.24%,
+    #f1b0bc 34.21%,
+    #adafff 59.87%,
+    #f1aeba 85.53%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 792px;
+  margin: 0 auto;
+  width: 100%;
+}
+.light {
+  font-weight: 300;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 32px;
+  background: var(--Primary-Default, #434aff);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--Base-950);
+  padding-bottom: 40px;
+  width: 100%;
+}
+.id {
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: var(--Base-950);
+  font-family: "Roboto Condensed";
+  letter-spacing: -1.92px;
+}
+.img {
+  max-width: 64px;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.project1 {
+  background: var(--Primary-Default);
+}
+.project1 .id,
+.project1 .title,
+.project1 .subTitle,
+.project1 .description {
+  color: var(--Base-0);
+}
+.project1 .header {
+  border-bottom-color: var(--Base-950);
+}
+.project2 {
+  background: var(--Yellow);
+}
+.project2 .id,
+.project2 .title,
+.project2 .subTitle,
+.project2 .description {
+  color: var(--Base-950);
+}
+.project2 .header {
+  border-bottom-color: var(--Base-950);
+}
+.project3 {
+  background: var(--Base-0);
+}
+.project3,
+.id,
+.project3 .title,
+.project3 .subTitle,
+.project3 .description {
+  color: var(--Base-950);
+}
+.project3 .header {
+  border-bottom-color: var(--Base-950);
+}
+.project4 {
+  background: var(--Base-900);
+}
+.project4 .id,
+.project4 .title,
+.project4 .subTitle,
+.project4 .description {
+  color: var(--Base-0);
+}
+.project4 .header {
+  border-bottom-color: var(--Base-0);
+}
+@media only screen and (max-width: 991px) {
+  .project {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .header {
+    padding-bottom: 24px;
+  }
+  .infoContainer {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .project {
+    padding: 20px;
+    gap: 24px;
+    border-radius: 20px;
+  }
+  .projects {
+    max-width: 500px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+}
