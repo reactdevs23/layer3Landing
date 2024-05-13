@@ -155,6 +155,12 @@
   margin-bottom: auto;
   margin-left: auto;
 }
+.br {
+  display: none;
+}
+.label {
+  font-size: 20px;
+}
 @media only screen and (max-width: 1199px) {
   .container {
     gap: 60px;
@@ -255,5 +261,8 @@
   }
   .logo {
     display: none;
+  }
+  .br {
+    display: block;
   }
 }

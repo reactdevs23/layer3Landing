@@ -63,8 +63,8 @@ const HeroSection = () => {
                 rel="noreferrer"
                 className={classes.box}
               >
-                <Text xl base950>
-                  Read the docs
+                <Text xl base950 className={classes.label}>
+                  Read the <br className={classes.br} /> docs
                 </Text>
                 <p className={classes.arrowContainer}>
                   <RiArrowRightLine className={classes.arrow} />
@@ -78,8 +78,8 @@ const HeroSection = () => {
               >
                 <img src={moreAboutUs} alt="#" className={classes.logo} />
                 <div className={classes.ecosystemInfo}>
-                  <Text xl base950>
-                    Explore the Ecosystem
+                  <Text xl base950 className={classes.label}>
+                    Explore the <br className={classes.br} /> Ecosystem
                   </Text>
                   <p className={classes.arrowContainer}>
                     <RiArrowRightLine className={classes.arrow} />
