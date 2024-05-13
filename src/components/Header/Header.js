@@ -9,11 +9,11 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import Dropdown from "./Dropdown/Dropdown";
-import useOnClickOutside from "../../hooks";
+
 import clsx from "clsx";
+import useOnClickOutside from "../../hooks";
 
 const Header = () => {
-  const ref = useRef(null);
   const [active, setActive] = useState(null);
   const navItems = [
     {
@@ -66,47 +66,57 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  useOnClickOutside(ref, () => setActive(false));
+  const dropdownRef = useRef(null);
+  useOnClickOutside(dropdownRef, () => setActive(null));
   return (
     <div
       className={[classes.wrapper, isScrolled && classes.wrapperBg].join(" ")}
     >
       <header className={[classes.header, "container"].join(" ")}>
-        <Link
-          className={[classes.logoContainer].join(" ")}
-          to="#"
-          onClick={() => setSidebar((prev) => !prev)}
-        >
+        <Link className={[classes.logoContainer].join(" ")} to="/">
           <img src={logo} alt="#" className={classes.logo} />
         </Link>
 
         <div
+          ref={dropdownRef}
           className={[classes.navItems, sidebar && classes.sidebar].join(" ")}
         >
           {navItems.map((el, i) => (
-            <div
-              ref={ref}
-              key={i}
-              className={clsx(classes.navItem)}
-              to={el.to}
-              onClick={() => {
-                if (active === i) {
-                  setActive(null);
-                } else {
-                  setActive(i);
-                }
-              }}
-            >
-              {el.navItem}
-              {i === active ? (
-                <FaAngleUp
-                  className={clsx(classes.arrow, classes.activeArrow)}
-                />
+            <React.Fragment key={i}>
+              {el.dropdownItems ? (
+                <div
+                  className={clsx(classes.navItem)}
+                  to={el.to}
+                  onClick={() => {
+                    if (active === i) {
+                      setActive(null);
+                    } else {
+                      setActive(i);
+                    }
+                  }}
+                >
+                  {el.navItem}
+                  {i === active ? (
+                    <FaAngleUp
+                      className={clsx(classes.arrow, classes.activeArrow)}
+                    />
+                  ) : (
+                    <FaAngleDown className={classes.arrow} />
+                  )}
+                  {i === active && (
+                    <Dropdown
+                      setSidebar={setSidebar}
+                      setActive={setActive}
+                      dropdownItems={el.dropdownItems}
+                    />
+                  )}
+                </div>
               ) : (
-                <FaAngleDown className={classes.arrow} />
+                <Link to={el.to} className={classes.navItem}>
+                  {el.navItem}
+                </Link>
               )}
-              {i === active && <Dropdown dropdownItems={el.dropdownItems} />}
-            </div>
+            </React.Fragment>
           ))}
           <Button base0 onClick={() => {}} className={classes.button}>
             Connect
@@ -121,11 +131,11 @@ const Header = () => {
             <IoMdClose className={classes.icon} />
           </div>
         ) : (
-          <div className={classes.iconContainer}>
-            <RxHamburgerMenu
-              className={classes.icon}
-              onClick={() => setSidebar((prev) => !prev)}
-            />
+          <div
+            className={classes.iconContainer}
+            onClick={() => setSidebar((prev) => !prev)}
+          >
+            <RxHamburgerMenu className={classes.icon} />
           </div>
         )}
       </header>

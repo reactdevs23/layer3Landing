@@ -142,8 +142,8 @@ const ProjectsOverview = () => {
         <div className={classes.projects}>
           <Slider {...settings}>
             {sliderData.map((el, i) => (
-              <div className={classes.projectWrapper}>
-                <div className={classes.project} key={i}>
+              <div className={classes.projectWrapper} key={i}>
+                <div className={classes.project}>
                   <img src={el.img} className={classes.projectImg} alt="#" />
                   <div className={classes.linkAndTitle}>
                     <Heading xl3 base950 semiBold>

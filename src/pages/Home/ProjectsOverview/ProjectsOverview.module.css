@@ -88,6 +88,10 @@
   transform: translate(-50%, -50%);
   z-index: -1;
 }
+.projects {
+  margin-left: -10px;
+  margin-right: -10px;
+}
 
 .projectWrapper {
   padding: 0 10px;
@@ -166,6 +170,7 @@
 .activeButton .arrow {
   color: var(--Base-950);
 }
+
 .exploreButton {
   border-radius: 10px;
 
@@ -216,6 +221,9 @@
   }
   .nextButton {
     transform: translate(calc(-50% - 40px), calc(100% + 30px));
+  }
+  .nextButton:hover {
+    transform: translate(calc(-50% - 43px), calc(100% + 30px));
   }
   .arrow {
     font-size: 24px;

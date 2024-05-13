@@ -52,7 +52,7 @@ const HeroSection = () => {
             <img src={buildEvm} alt="#" className={classes.buildEvm} />
           </div>
           <div className={classes.infoContainer}>
-            <Text lg base0>
+            <Text lg base0 className={classes.text}>
               Lorem ipsum dolor sit amet, dipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim minim veniam
             </Text>
