@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import classes from "./Header.module.css";
 import { Link } from "react-router-dom";
 import Button from "../../common/Button/Button";
-import { logo } from "../../images";
+import { logo, logo2 } from "../../images";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -13,7 +13,7 @@ import Dropdown from "./Dropdown/Dropdown";
 import clsx from "clsx";
 import useOnClickOutside from "../../hooks";
 
-const Header = () => {
+const Header = ({ isTransparent }) => {
   const [active, setActive] = useState(null);
   const navItems = [
     {
@@ -70,11 +70,20 @@ const Header = () => {
   useOnClickOutside(dropdownRef, () => setActive(null));
   return (
     <div
-      className={[classes.wrapper, isScrolled && classes.wrapperBg].join(" ")}
+      className={[
+        classes.wrapper,
+        isScrolled && classes.wrapperBg,
+        isTransparent && classes.transparent,
+        sidebar && isTransparent && classes.bg,
+      ].join(" ")}
     >
       <header className={[classes.header, "container"].join(" ")}>
         <Link className={[classes.logoContainer].join(" ")} to="/">
-          <img src={logo} alt="#" className={classes.logo} />
+          <img
+            src={isTransparent ? logo2 : logo}
+            alt="#"
+            className={classes.logo}
+          />
         </Link>
 
         <div
@@ -105,6 +114,7 @@ const Header = () => {
                   )}
                   {i === active && (
                     <Dropdown
+                      isTransparent={isTransparent}
                       setSidebar={setSidebar}
                       setActive={setActive}
                       dropdownItems={el.dropdownItems}
@@ -118,7 +128,12 @@ const Header = () => {
               )}
             </React.Fragment>
           ))}
-          <Button base0 onClick={() => {}} className={classes.button}>
+          <Button
+            base0={!isTransparent}
+            primaryDefault={isTransparent}
+            onClick={() => {}}
+            className={classes.button}
+          >
             Connect
           </Button>
         </div>

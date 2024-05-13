@@ -14,6 +14,10 @@
   border-radius: 10px;
   padding-left: 30px;
 }
+.transparent {
+  background: var(--Base-0);
+  border: 1px solid rgb(9, 9, 15, 0.3);
+}
 .item {
   color: var(--Base-0);
 
@@ -23,6 +27,9 @@
   line-height: 140%;
   position: relative;
   white-space: nowrap;
+}
+.transparent .item {
+  color: var(--Base-950);
 }
 .item::before {
   content: "";
@@ -34,6 +41,9 @@
   border-radius: 50%;
   background: var(--Base-0);
   transform: translate(-50%, -50%);
+}
+.transparent .item::before {
+  background: var(--Base-950);
 }
 @media only screen and (max-width: 1199px) {
   .wrapper {

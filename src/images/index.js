@@ -3,6 +3,7 @@ import topIcon from "./topIcon.png";
 import bottomIcon from "./bottomIcon.png";
 import middleIcon from "./middleIcon.png";
 import logo from "./logo.png";
+import logo2 from "./logo2.png";
 import pattern from "./pattern.png";
 //tokenomization
 import arrow from "./arrow.svg";
@@ -31,6 +32,7 @@ import apiIntegration from "./appIntegration.png";
 export {
   pattern,
   logo,
+  logo2,
   heroBg,
   topIcon,
   middleIcon,
